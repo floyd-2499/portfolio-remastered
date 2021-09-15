@@ -1,0 +1,63 @@
+@import "./variables";
+@import "./home";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 85%;
+  margin: auto;
+  background: $primary-color;
+  font-family: "Kalam", cursive;
+}
+
+// header
+.header {
+  width: 100%;
+  margin: auto;
+  padding: 20px 0px;
+  @include flexCenter(row, center, space-between);
+  position: sticky;
+
+  .image {
+    width: 15%;
+    cursor: pointer;
+    @include flexCenter(row, flex-start, flex-start);
+
+    img {
+      width: 110px;
+    }
+  }
+
+  .navigation {
+    width: 45%;
+
+    i {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    &-links {
+      font-size: 22px;
+      @include flexCenter(row, flex-end, space-between);
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        height: fit-content;
+        box-sizing: border-box;
+        padding-bottom: 2px;
+
+        &:hover {
+          // color: $secondary-color;
+          padding: 0px;
+          border-bottom: 2px solid $secondary-color;
+          transition: border-height 0.6s linear;
+        }
+      }
+    }
+  }
+}

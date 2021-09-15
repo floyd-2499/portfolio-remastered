@@ -1,0 +1,136 @@
+@import "./variables";
+
+.home-bg {
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  color: $text-color;
+  text-align: center;
+  font-size: 300px;
+  line-height: 310px;
+  overflow: hidden;
+  opacity: 0.015;
+}
+
+.h1-container {
+  width: 100%;
+  padding: 20px 0px;
+
+  .contents {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    @include flexCenter(row, center, space-between);
+
+    &-left {
+      width: 100%;
+      height: 80vh;
+      margin: auto;
+      color: $text-color;
+      @include flexCenter(column, center, center);
+
+      span {
+        font-size: 24px;
+        font-weight: 400;
+        color: $third-color;
+      }
+      h1 {
+        font-size: 65px;
+        font-weight: 300;
+        text-align: center;
+
+        &::first-letter {
+          color: $secondary-color;
+        }
+      }
+      hr {
+        width: 60%;
+      }
+      h3 {
+        font-size: 28px;
+        margin-top: 20px;
+        font-weight: 300;
+        color: $third-color;
+      }
+      &_icons {
+        margin-top: 40px;
+        width: 35%;
+        @include flexCenter(row, center, space-between);
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+
+          i {
+            color: $text-color;
+            font-size: 35px;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .inn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    padding: 10px 30px;
+    background: #fff;
+    border-radius: 10px;
+
+    i {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 20px;
+    }
+    .form {
+      width: 100%;
+      p {
+        font-size: 20px;
+        color: $secondary-color;
+      }
+
+      input {
+        font-size: 22px;
+        font-weight: 400;
+        color: $primary-color;
+        letter-spacing: 1px;
+        font-family: "Kalam", cursive;
+        outline: none;
+        border: none;
+        border: 2px solid $third-color;
+
+        &:hover {
+          padding: 2px 2px 0px 2px;
+          border: none;
+          border-bottom: 2px solid $primary-color;
+        }
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background: $primary-color;
+        transition: all 0.5s ease-in-out;
+        outline: none;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 18px;
+
+        &:hover {
+          background: $secondary-color;
+        }
+      }
+    }
+  }
+}
