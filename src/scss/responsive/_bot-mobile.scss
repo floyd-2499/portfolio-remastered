@@ -1,0 +1,125 @@
+@include media-lg {
+  .bot-container {
+    .content {
+      .left {
+        h1 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .bot-container {
+    .content {
+      width: 90%;
+      height: 90%;
+      @include flexCenter(column, flex-start, space-between);
+      overflow: scroll;
+
+      .left {
+        width: 100%;
+        @include flexCenter(column, center, center);
+        height: fit-content;
+
+        .drop-btns-top {
+          display: block;
+          width: 100%;
+          color: $primary-color;
+          background-color: $third-color;
+          cursor: pointer;
+          i {
+            line-height: 30px;
+            font-size: 20px;
+            width: 100%;
+            text-align: center;
+          }
+          &:hover {
+            background-color: $third-color;
+            color: $secondary-color;
+          }
+        }
+        .drop-btns {
+          display: flex;
+          width: 100%;
+          padding: 2px 0px;
+          color: #fff;
+          background-color: $primary-color;
+          cursor: pointer;
+          i {
+            font-size: 20px;
+            width: 100%;
+            text-align: center;
+          }
+          &:hover {
+            background-color: $third-color;
+            color: $secondary-color;
+          }
+        }
+
+        hr {
+          display: none;
+        }
+        h1 {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .navbtns {
+          width: 100%;
+          margin: 20px;
+          @include flexCenter(column, center, center);
+
+          span {
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+      .right {
+        width: 100%;
+        padding: 10px;
+
+        p {
+          text-indent: 0px;
+          width: 100%;
+          margin: auto;
+          text-align: center;
+        }
+
+        .questions {
+          @include flexCenter(column, center, center);
+        }
+
+        .note{
+            p{
+                font-size: 12px;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+
+        .message-container {
+           
+            .box{
+                width: 80%;
+                min-height: 60vh;
+                overflow: scroll;
+
+                .msg{
+                    .voiceIn{
+                        span{
+                            font-size: 14px;
+                        }
+                    }
+                    .voiceOut{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+      }
+    }
+  }
+}

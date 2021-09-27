@@ -1,0 +1,28 @@
+@include media-md {
+  .contact {
+    h1 {
+      font-size: 35px;
+      width: 90%;
+      margin: auto;
+      line-height: 45px;
+      margin-bottom: 30px;
+    }
+
+    &-card {
+      margin-bottom: 20px;
+      border-bottom: 2px dashed $third-color;
+      h1 {
+        font-size: 22px;
+      }
+      span {
+        margin-top: -24px;
+        font-size: 18px;
+        padding: 5px 15px;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

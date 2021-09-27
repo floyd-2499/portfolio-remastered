@@ -1,25 +1,57 @@
 import React, { useState } from "react";
-import Fade from "react-reveal/Fade";
-// import h1pic from "../images/h1pic.svg";
+import h1pic from "../images/h1pic.svg";
 
 const HomePart1 = () => {
-  const [displayInn, setDisplayInn] = useState("block");
+  const [displayInn, setDisplayInn] = useState("flex");
   const [name, setName] = useState("");
+  const username = localStorage.getItem("username");
+  localStorage.setItem("userName", "hello");
 
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const speech = new SpeechSynthesisUtterance();
 
-
-  
-
   function getInput() {
-    console.log(name);
-    speech.text = ` Hello ${name}, welcome to my portfolio.`;
+    // console.log(name);
+    localStorage.setItem("username", name);
+    speech.text = ` Hello ${name}, welcome to my portfolio. I'm here to assist you. Please Click on the button at the bottom-right  for further interactions. Or click on Learn More to know more about assistant. Have a great day.`;
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 0;
     window.speechSynthesis.speak(speech);
     setDisplayInn("none");
+  }
+
+  function popInn() {
+    return (
+      <div>
+        {username === " " ? (
+          <div className="inn" style={{ display: `${displayInn}` }}>
+            <div className="inn-content">
+              <i
+                className="fas fa-times"
+                onClick={() => setDisplayInn("none")}
+              ></i>
+
+              <div className="texts">
+                <h1>Hi Dear,</h1>
+                <h2>May I know your name?</h2>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value.toUpperCase());
+                  }}
+                  placeholder="Name..."
+                />
+                <button onClick={() => getInput()}>SUBMIT</button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div />
+        )}
+      </div>
+    );
   }
 
   return (
@@ -54,31 +86,14 @@ const HomePart1 = () => {
             </a>
           </div>
         </div>
-      
 
-        {/* <div className="contents-right">
+        <div className="contents-right">
           <img src={h1pic} alt="main" />
-        </div> */}
-      </div>
-
-      <div className="inn" style={{ display: `${displayInn}` }}>
-        <i
-          className="fas fa-times"
-          onClick={() => {
-            setDisplayInn("none") && console.log("hello");
-          }}
-        ></i>
-        <div className="form">
-          <p>May I know your name?</p>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <br />
-          <button onClick={() => getInput()}>Submit</button>
         </div>
       </div>
+      {}
+
+      {popInn()}
     </div>
   );
 };

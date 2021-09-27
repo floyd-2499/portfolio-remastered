@@ -1,0 +1,61 @@
+@include media-md {
+  .pro-container {
+    .slider {
+      display: none;
+    }
+    img {
+      width: 80%;
+    }
+    .box {
+      border-bottom: 3px dashed $third-color;
+
+      img {
+        width: 150px;
+        }
+
+      p {
+        margin-top: 20px;
+        font-size: 20px;
+        width: 85%;
+      }
+
+      span {
+        font-size: 12px;
+      }
+      h3 {
+        font-size: 20px;
+        width: 90%;
+        margin: 20px auto 0px auto;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .texts {
+        @include flexCenter(column, center, center);
+
+        .rt {
+          width: fit-content;
+          text-align: center;
+          font-weight: 300;
+          margin-bottom: 20px;
+          border-bottom: 3px dotted $third-color;
+          font-size: 18px;
+        }
+        .lt {
+          li {
+            margin-left: 0px;
+            text-align: center;
+            list-style: none;
+            font-size: 20px;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-xl{
+    .slider{
+        min-height: fit-content;
+        margin-bottom: 50px;
+    }
+}

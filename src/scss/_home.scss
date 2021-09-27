@@ -1,21 +1,32 @@
-@import "./variables";
-
 .home-bg {
   position: fixed;
   top: 40px;
   left: 0px;
-  width: 100%;
+  min-width: fit-content;
+  width: 120%;
   height: auto;
   color: $text-color;
   text-align: center;
   font-size: 300px;
   line-height: 310px;
   overflow: hidden;
-  opacity: 0.015;
+  opacity: 0.01;
+  animation: bgmove 10s infinite;
+}
+@keyframes bgmove {
+  from {
+    left: -300%;
+  }
+  to {
+    left: 100%;
+  }
 }
 
+// home Part1
 .h1-container {
   width: 100%;
+  height: fit-content;
+  min-height: 90vh;
   padding: 20px 0px;
 
   .contents {
@@ -23,12 +34,12 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    height: auto;
+    height: 100%;
     @include flexCenter(row, center, space-between);
 
     &-left {
       width: 100%;
-      height: 80vh;
+      height: 100%;
       margin: auto;
       color: $text-color;
       @include flexCenter(column, center, center);
@@ -37,6 +48,7 @@
         font-size: 24px;
         font-weight: 400;
         color: $third-color;
+        margin-bottom: 10px;
       }
       h1 {
         font-size: 65px;
@@ -58,7 +70,7 @@
       }
       &_icons {
         margin-top: 40px;
-        width: 35%;
+        width: 30%;
         @include flexCenter(row, center, space-between);
 
         a {
@@ -71,66 +83,450 @@
             transition: all 0.5s ease-in-out;
             &:hover {
               color: $secondary-color;
+              transform: rotate(360deg) scale(1.2);
             }
           }
         }
       }
     }
+    &-right {
+      display: none;
+    }
   }
+}
 
-  .inn {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    padding: 10px 30px;
-    background: #fff;
-    border-radius: 10px;
+.inn {
+  @include flexCenter(column, center, center);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgba(30, 30, 36, 0.5);
+  animation: mymove 10s;
+  animation-iteration-count: 1;
+  @include tranition-ease;
+  z-index: 8;
+
+  &-content {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(126.45deg, #ffffff 39.56%, #fbcab8 97.03%);
+    border-radius: 5px;
+    width: fit-content;
+    height: 350px;
+    padding: 20px;
 
     i {
+      font-size: 24px;
       width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      font-size: 20px;
-    }
-    .form {
-      width: 100%;
-      p {
-        font-size: 20px;
+      float: right;
+      @include flexCenter(row, center, flex-end);
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
         color: $secondary-color;
       }
-
-      input {
+    }
+    .texts {
+      margin-top: 40px;
+      @include flexCenter(column, center, flex-end);
+      h1 {
+        font-size: 30px;
+        font-weight: 400;
+        color: $primary-color;
+      }
+      h2 {
         font-size: 22px;
         font-weight: 400;
         color: $primary-color;
+        margin-top: 30px;
+        text-align: center;
+      }
+      input {
+        font-size: 26px;
+        font-weight: 700;
         letter-spacing: 1px;
+        color: $primary-color;
         font-family: "Kalam", cursive;
         outline: none;
         border: none;
-        border: 2px solid $third-color;
+        border-bottom: 3px solid $primary-color;
+        text-transform: uppercase;
+        width: 100%;
+        margin: 20px 0px;
+        transition: all 0.5s ease-in-out;
 
         &:hover {
-          padding: 2px 2px 0px 2px;
           border: none;
-          border-bottom: 2px solid $primary-color;
+          border-bottom: 3px solid $secondary-color;
         }
       }
-
       button {
-        margin-top: 10px;
         padding: 10px 15px;
-        background: $primary-color;
+        background: $secondary-color;
         transition: all 0.5s ease-in-out;
         outline: none;
         border: none;
         color: #fff;
         border-radius: 5px;
-        font-size: 18px;
+        font-size: 20px;
+        width: 100%;
+        &:hover {
+          background: $primary-color;
+        }
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+  }
 
+  @keyframes mymove {
+    from {
+      top: -1000%;
+    }
+    to {
+      top: 0%;
+    }
+  }
+}
+
+// HomePart2
+.h2-container {
+  height: fit-content;
+  // min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
+
+  .skills-section {
+    width: 85%;
+    margin: auto;
+    padding: 30px 0px;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 40px;
+      border-bottom: 2px dotted $third-color;
+      width: fit-content;
+      margin-bottom: 20px;
+    }
+
+    &-bars {
+      @include flexCenter(row, center, space-between);
+      width: 100%;
+
+      span {
+        width: 49.9%;
+        background: $primary-color;
+        border-radius: 5px;
+        padding: 20px 0px;
+        text-align: center;
+        z-index: 1;
+        color: $text-color;
+        font-size: 26px;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          background: $secondary-color;
+        }
         &:hover {
           background: $secondary-color;
         }
       }
     }
+    &-content {
+      width: 100%;
+      height: auto;
+      @include flexCenter(row, flex-start, space-between);
+      margin: 30px 0px;
+      .text {
+        width: 65%;
+        position: sticky;
+        top: 0;
+        margin-top: 30px;
+
+        h3 {
+          font-size: 34px;
+          font-weight: 300;
+          line-height: 40px;
+
+          &::first-letter {
+            color: $secondary-color;
+            font-size: 38px;
+          }
+        }
+        p {
+          font-size: 28px;
+          text-indent: 50px;
+          margin: 50px 0px;
+          font-weight: 300;
+        }
+        span {
+          font-size: 26px;
+          font-weight: 300;
+
+          strong {
+            font-size: 30px;
+            font-weight: 400;
+          }
+        }
+        .skills-list {
+          width: 50%;
+          @include flexCenter(row, flex-start, space-between);
+          margin-bottom: 30px;
+
+          &_left {
+            width: fit-content;
+
+            span {
+              font-size: 30px;
+              font-weight: 400;
+              text-decoration: underline;
+            }
+          }
+          &_right {
+            li {
+              margin-bottom: 10px;
+              font-size: 26px;
+            }
+          }
+        }
+        h5 {
+          margin-top: 30px;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        .icons {
+          margin-top: 30px;
+          @include flexCenter(row, center, space-between);
+          width: 40%;
+
+          a {
+            text-decoration: none;
+
+            i {
+              font-size: 35px;
+              color: $primary-color;
+              transition: all 0.5s ease-in-out;
+
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+      .image {
+        width: 30%;
+        height: auto;
+        z-index: 1;
+        position: sticky;
+        top: 0;
+        image-rendering: auto;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: -webkit-optimize-contrast;
+
+        img {
+          width: 100%;
+          height: auto;
+
+          &::before {
+            display: block;
+            content: "";
+          }
+        }
+      }
+    }
   }
 }
+
+// home Part 3
+.h3-container {
+  width: 85%;
+  height: fit-content;
+  min-height: 110vh;
+  margin: auto;
+  padding: 40px 0px;
+  margin-top: 20px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    border-bottom: 2px dotted $third-color;
+    width: fit-content;
+    margin: 40px 0px 30px 0px;
+    color: #fff;
+  }
+  hr {
+    width: 70%;
+    margin: auto;
+  }
+  .box {
+    width: 60%;
+    margin: 30px auto;
+    height: auto;
+    @include flexCenter(column, center, center);
+
+    .main {
+      @include flexCenter(row, center, space-between);
+
+      img {
+        width: 30%;
+        height: auto;
+      }
+      p {
+        width: 60%;
+        border-left: 3px solid #fff;
+        height: fit-content;
+        padding-left: 10px;
+        font-size: 24px;
+        font-weight: 300;
+        color: $third-color;
+
+        &::first-letter {
+          color: $secondary-color;
+          font-size: 30px;
+          font-weight: 400;
+        }
+      }
+    }
+    .btn {
+      width: 100%;
+      margin-top: 20px;
+      @include flexCenter(row, center, flex-end);
+      z-index: 1;
+
+      a {
+        text-decoration: none;
+
+        button {
+          outline: none;
+          border: 2px solid $secondary-color;
+          border-radius: 5px;
+          background: none;
+          color: #fff;
+          font-size: 24px;
+          padding: 0px 25px;
+          cursor: pointer;
+          font-family: "Kalam", cursive;
+          font-weight: 400;
+          transition: all 0.5s ease-in-out;
+
+          &:first-child {
+            margin-right: 20px;
+          }
+
+          &:hover {
+            background: $secondary-color;
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}
+.h4-container {
+  height: fit-content;
+  width: 100%;
+  background-color: #fff;
+  padding: 110px 0px;
+  z-index: 1;
+
+  .contents {
+    width: 85%;
+    margin: auto;
+
+    h1 {
+      margin-top: 10px;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 40px;
+      border-bottom: 2px dotted $third-color;
+      width: fit-content;
+    }
+
+    .box {
+      width: 100%;
+      height: fit-content;
+      padding: 20px 0px 10px 0px;
+      margin-top: 30px;
+      background-color: $primary-color;
+      z-index: 1;
+      border-radius: 30px;
+      @include flexCenter(column, center, space-between);
+
+      p {
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+        max-width: 60%;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        @include flexCenter(column, center, center);
+        width: 150px;
+        height: auto;
+        background-color: $third-color;
+        padding: 20px 0px;
+        overflow: visible;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        h1 {
+          font-weight: 700;
+          font-size: 28px;
+          color: $primary-color;
+          border: none;
+          text-align: center;
+          line-height: 30px;
+        }
+        i {
+          font-size: 24px;
+          color: $text-color;
+        }
+
+        span {
+          width: fit-content;
+          padding: 7px 30px;
+          background-color: $secondary-color;
+          color: #fff;
+          font-size: 24px;
+          letter-spacing: 1px;
+          border-radius: 5px;
+          cursor: pointer;
+          z-index: 1;
+          transition: all 0.5s ease-in-out;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+      span {
+        font-size: 24px;
+        color: $third-color;
+        margin-top: 10px;
+      }
+
+      .popup {
+        position: fixed;
+        bottom: 1%;
+        padding: 5px 25px;
+        background-color: $secondary-color;
+        border-radius: 10px;
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+        z-index: 4;
+      }
+    }
+  }
+}
+

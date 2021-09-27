@@ -1,0 +1,56 @@
+@include media-md {
+  .abt-container {
+    height: fit-content;
+    z-index: 0;
+    @include flexCenter(row, center, space-between);
+    .media {
+      margin-right: 20px;
+
+      a {
+        i {
+          font-size: 26px;
+        }
+      }
+    }
+    .image {
+      display: none;
+    }
+    .text {
+      width: 100%;
+      @include flexCenter(column, center, space-between);
+
+      .image-last {
+        display: block;
+        img{
+          border-radius: 5px;
+        }
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+      h2 {
+        font-size: 30px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        text-indent: 0px;
+        width: 85%;
+      }
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@include media-sm {
+  .abt-container {
+    height: fit-content;
+    @include flexCenter(row, center, space-between);
+    .media {
+      display: none;
+    }
+  }
+}

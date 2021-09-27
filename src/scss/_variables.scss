@@ -9,3 +9,6 @@ $text-color: #F7EBE8;
     flex-direction: $direction;
     justify-content: $content;
 }
+@mixin tranition-ease {
+    transition: all 0.5s ease-in;
+}

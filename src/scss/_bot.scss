@@ -1,0 +1,227 @@
+.bot-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(30, 30, 36, 0.9);
+  z-index: 9;
+  @include flexCenter(column, center, center);
+
+  .content {
+    width: 70%;
+    height: 85%;
+    background-color: #fff;
+    @include flexCenter(row, flex-start, space-between);
+
+    .left {
+      width: 22%;
+      height: 100%;
+      background-color: $secondary-color;
+      @include flexCenter(column, center, flex-start);
+
+      h1 {
+        color: #fff;
+        font-weight: 400;
+        margin: 30px 0px;
+        font-size: 30px;
+      }
+      hr {
+        width: 70%;
+      }
+      .drop-btns-top {
+        display: none;
+      }
+      .drop-btns{
+        display: none;
+      }
+      .navbtns {
+        @include flexCenter(column, center, center);
+        width: 100%;
+        margin: 20px 0px;
+        span {
+          padding: 10px 0px;
+          width: 100%;
+          text-align: center;
+          cursor: pointer;
+          color: $text-color;
+          font-size: 20px;
+
+          &:hover {
+            background-color: $text-color;
+            color: $primary-color;
+          }
+        }
+        .active {
+          background-color: $third-color;
+          color: $primary-color;
+        }
+      }
+      .icons {
+        @include flexCenter(column, center, space-around);
+        width: 100%;
+        height: 40%;
+        margin-top: 10px;
+        font-size: 24px;
+
+        a {
+          text-decoration: none;
+
+          i {
+            color: #fff;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+              color: $third-color;
+              transform: rotate(360deg) scale(1.3);
+            }
+          }
+        }
+      }
+    }
+    .right {
+      width: 70%;
+      height: 100%;
+      @include flexCenter(column, flex-start, flex-start);
+      padding: 20px 50px 0px 0px;
+
+      i {
+        width: 100%;
+        @include flexCenter(row, center, flex-end);
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .top {
+        width: 100%;
+        @include flexCenter(row, center, space-between);
+
+        .reset {
+          cursor: pointer;
+          font-size: 18px;
+          transition: transform 0.5s ease-in-out;
+          padding: 5px 10px;
+
+          &:hover {
+            transform: scale(1.2);
+            background-color: $secondary-color;
+            width: fit-content;
+            border-radius: 7px;
+            color: #fff;
+          }
+        }
+        i {
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+
+      // Tab1
+      h1 {
+        font-size: 22px;
+        font-weight: 400;
+
+        span {
+          font-size: 46px;
+          color: $secondary-color;
+          font-weight: 400;
+        }
+      }
+      p {
+        text-indent: 50px;
+        max-width: 90%;
+      }
+
+      .questions {
+        @include flexCenter(row, flex-start, flex-start);
+        margin-top: 20px;
+
+        h1 {
+          margin-right: 40px;
+          font-size: 20px;
+          text-decoration: underline;
+
+          &::first-letter {
+            color: $secondary-color;
+            font-size: 26px;
+          }
+        }
+        .lists {
+          h2 {
+            font-size: 20px;
+            font-weight: 400;
+          }
+          h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: 400;
+          }
+          li {
+            margin-left: 30px;
+          }
+        }
+      }
+      .note {
+        width: 100%;
+        @include flexCenter(column, center, center);
+        margin-top: 20px;
+      }
+
+      .message-container {
+        width: 100%;
+        height: 100%;
+        @include flexCenter(column, center, center);
+        .box {
+          width: 40%;
+          height: 85%;
+          padding: 10px 10px;
+          background-color: $third-color;
+          @include flexCenter(column, center, flex-end);
+          border-radius: 10px;
+
+          .msg {
+            padding: 10px 10px;
+            width: 100%;
+            height: fit-content;
+
+            .voiceIn {
+              @include flexCenter(row, center, flex-end);
+              width: 100%;
+
+              span {
+                width: fit-content;
+                background-color: $secondary-color;
+                color: #fff;
+                padding: 5px 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.3);
+                }
+              }
+            }
+            .voiceOut {
+              background-color: $primary-color;
+              color: #fff;
+              padding: 5px 10px;
+              width: fit-content;
+              margin-top: 10px;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: all 0.5s ease-in-out;
+
+              &:hover {
+                transform: scale(1.3);
+              }
+            }
+          }
+        }
+      }
+      .reset {
+        margin-top: 0px;
+      }
+    }
+  }
+}
