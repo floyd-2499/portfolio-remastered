@@ -52,7 +52,8 @@ const App = () => {
           localStorage.setItem("reply", reply);
         } else if (
           input.includes("mobile number") ||
-          input.includes("phone number")
+          input.includes("phone number") ||
+          input.includes("contact number") 
         ) {
           const reply = "My phone number is +91 9740250911.";
           setOutput(reply);
