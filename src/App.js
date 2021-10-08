@@ -70,7 +70,7 @@ const App = () => {
           setOutput("Redirected to about Page");
         } else if (input.includes("home page") || input.includes("home")) {
           window.location.replace("/");
-          setOutput("Welcome to my Home Page");
+          setOutput("Welcome back to my Home Page");
         } else if (input.includes("resume")) {
           window.location.replace(
             "https://drive.google.com/file/d/1Rgzh2mCImDb_nE1rFqjzFJM4ZPx2hM38/view"
@@ -97,7 +97,6 @@ const App = () => {
   }
 
   voice();
-  
 
   function addText() {
     let textin = localStorage.getItem("voicein");
@@ -110,26 +109,22 @@ const App = () => {
       in: textin,
       out: textout,
     };
-    
+
     setContents([...contents, myList]);
   }
 
   function click() {
-    setDisplayLearnMore("block"); 
+    setDisplayLearnMore("block");
   }
- 
-  useEffect(() => {
-    if(displayLearnMore === "block"){
-      addText();
-    }else{
-      
-    }
-  }, [displayLearnMore])
 
- 
+  useEffect(() => {
+    if (displayLearnMore === "block") {
+      addText();
+    } else {
+    }
+  }, [displayLearnMore]);
 
   return (
-    
     <div>
       <div className="home-bg">
         PORTFOLIO
@@ -144,7 +139,11 @@ const App = () => {
         <p onClick={() => click()}>Learn More</p>
       </div>
       <div style={{ display: `${displayLearnMore}` }}>
-        <Bot setDisplayLearnMore={setDisplayLearnMore} contents={contents} addText={addText}/>
+        <Bot
+          setDisplayLearnMore={setDisplayLearnMore}
+          contents={contents}
+          addText={addText}
+        />
       </div>
 
       <BrowserRouter>

@@ -28,6 +28,7 @@
   height: fit-content;
   min-height: 90vh;
   padding: 20px 0px;
+  @include flexCenter(column, center, center);
 
   .contents {
     position: relative;
@@ -35,7 +36,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    @include flexCenter(row, center, space-between);
+    @include flexCenter(column, center, center);
 
     &-left {
       width: 100%;
@@ -103,7 +104,7 @@
   top: 0%;
   left: 0%;
   background: rgba(30, 30, 36, 0.5);
-  animation: mymove 10s;
+  animation: mymove 5s;
   animation-iteration-count: 1;
   @include tranition-ease;
   z-index: 8;
@@ -185,7 +186,7 @@
 
   @keyframes mymove {
     from {
-      top: -1000%;
+      top: -100%;
     }
     to {
       top: 0%;
@@ -247,7 +248,7 @@
       .text {
         width: 65%;
         position: sticky;
-        top: 0;
+        top: 5%;
         margin-top: 30px;
 
         h3 {

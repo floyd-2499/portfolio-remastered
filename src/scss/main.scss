@@ -22,10 +22,17 @@
 }
 
 body {
+  max-width: 1500px;
   width: 100%;
   margin: auto;
   background: $primary-color;
   font-family: "Kalam", cursive;
+}
+img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 // header
@@ -37,7 +44,7 @@ body {
   position: sticky;
   z-index: 6;
 
-  .bars {
+  .bar{
     display: none;
   }
 
@@ -177,7 +184,7 @@ body {
       color: #fff;
     }
   }
-} 
+}
 
 @include media-md {
   .footer {

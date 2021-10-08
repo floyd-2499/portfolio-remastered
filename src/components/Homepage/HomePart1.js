@@ -4,8 +4,8 @@ import React, { useState } from "react";
 const HomePart1 = () => {
   const [displayInn, setDisplayInn] = useState("flex");
   const [name, setName] = useState("");
-  const username = localStorage.getItem("username");
-  localStorage.setItem("userName", "hello");
+  const username = localStorage.getItem("userName");
+  localStorage.setItem("userName", "Dear");
 
 
   const speech = new SpeechSynthesisUtterance();
@@ -23,7 +23,7 @@ const HomePart1 = () => {
   function popInn() {
     return (
       <div>
-        {username === " " ? (
+        {username === "Dear" ? (
           <div className="inn" style={{ display: `${displayInn}` }}>
             <div className="inn-content">
               <i
@@ -88,7 +88,6 @@ const HomePart1 = () => {
 
 
       </div>
-      {}
 
       {popInn()}
     </div>
