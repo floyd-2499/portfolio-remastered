@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import h1pic from "../images/h1pic.svg";
+
 
 const HomePart1 = () => {
   const [displayInn, setDisplayInn] = useState("flex");
@@ -7,11 +7,10 @@ const HomePart1 = () => {
   const username = localStorage.getItem("username");
   localStorage.setItem("userName", "hello");
 
-  // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
   const speech = new SpeechSynthesisUtterance();
 
   function getInput() {
-    // console.log(name);
     localStorage.setItem("username", name);
     speech.text = ` Hello ${name}, welcome to my portfolio. I'm here to assist you. Please Click on the button at the bottom-right  for further interactions. Or click on Learn More to know more about assistant. Have a great day.`;
     speech.volume = 1;
@@ -87,9 +86,7 @@ const HomePart1 = () => {
           </div>
         </div>
 
-        <div className="contents-right">
-          <img src={h1pic} alt="main" />
-        </div>
+
       </div>
       {}
 

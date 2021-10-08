@@ -1,7 +1,6 @@
 import React from "react";
 import cmlogo from "../images/cmlogo.svg";
 import tvlogo from "../images/tvlogo.svg";
-import { Link } from "react-router-dom";
 
 const HomePart3 = () => {
   return (

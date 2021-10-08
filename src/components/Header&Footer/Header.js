@@ -15,6 +15,7 @@ const Header = () => {
 
     setTimeout(() => {
       setNavs("none")
+      setBarsIcon("block");
     }, 5000);
   }
   function close() {
