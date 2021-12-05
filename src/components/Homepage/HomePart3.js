@@ -1,6 +1,7 @@
 import React from "react";
 import cmlogo from "../images/cmlogo.svg";
 import tvlogo from "../images/tvlogo.svg";
+import Smart from "../images/SmartHub.svg"
 
 const HomePart3 = () => {
   return (
@@ -38,6 +39,24 @@ const HomePart3 = () => {
             <button>Info</button>
           </a>
           <a href="https://travel-vlog-7fb43.web.app/">
+            <button>View Project</button>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <br />
+      <div className="box">
+        <div className="main">
+          <img src={Smart} alt="The Smart Hub logo" />
+          <p>
+            A simple app for showcasing the items available at shop. 
+          </p>
+        </div>
+        <div className="btn">
+          <a href="/projects#tv">
+            <button>Info</button>
+          </a>
+          <a href="https://the-smart-hub.web.app/">
             <button>View Project</button>
           </a>
         </div>

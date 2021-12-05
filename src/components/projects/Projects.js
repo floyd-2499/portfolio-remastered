@@ -12,6 +12,8 @@ import tvlogo from "../images/tvlogo.svg";
 import logo from "../images/logo.svg";
 import project1 from "../images/project1.svg";
 import project2 from "../images/project2.svg";
+import smart from "../images/SmartHub.png"
+import sm from "../images/smart.png";
 
 const Projects = () => {
   return (
@@ -88,6 +90,30 @@ const Projects = () => {
 
         <img src={project2} alt="project Travel Vlog" />
 
+        <div className="box">
+          <img src={smart} alt="SmartHub" id="sh"/>
+          <p >
+          A simple app for showcasing the items available at shop. 
+          </p>
+          <a href="https://the-smart-hub.web.app/">
+            <div className="btn">View Live Project</div>
+          </a>
+          <span>-- December-2021 -- </span>
+
+          <h3>Know more about the project...</h3>
+
+          <div className="texts">
+            <div className="rt">Technologies used: </div>
+            <div className="lt">
+              <li>HTML , CSS and JavaScript</li>
+              <li>React - Redux (Saga)</li>
+              <li>Firebase (Deployment)</li>
+              <li>Figma (UI/UX Design)</li>
+            </div>
+          </div>
+        </div>
+
+        <img src={sm} alt="The Smart Hub" />
 
 
         <div className="box">
